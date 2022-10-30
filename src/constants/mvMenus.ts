@@ -1,0 +1,80 @@
+export const  mvAreaMenus = [
+  {
+    name:"全部",
+    key:'全部',
+    activity:true
+  },
+  {
+    name:"内地",
+    key:"内地",
+    activity:false
+  },
+  {
+    name:"港台",
+    key:"港台",
+    activity:false
+  },
+  {
+    name:"欧美",
+    key:"欧美",
+    activity:false
+  },
+  {
+    name:"日本",
+    key:"日本",
+    activity:false
+  },
+  {
+    name:"韩国",
+    key:"韩国",
+    activity:false
+  },
+  
+]
+
+export const mvTypeMenus = [
+  {
+    name:'全部',
+    key:'全部',
+    activity:true
+  },
+  {
+    name:'官方版',
+    key:'官方版',
+    activity:false
+  },
+  {
+    name:'原生',
+    key:'原生',
+    activity:false
+  },
+  {
+    name:'现场版',
+    key:'现场版',
+    activity:false
+  },
+  {
+    name:'网易出品',
+    key:'网易出品',
+    activity:false
+  },
+]
+
+
+export const  mvOrderMenus = [
+  {
+    name:'上升',
+    key:'上升最快',
+    activity:true
+  },
+  {
+    name:'最热',
+    key:'最热',
+    activity:false
+  },
+  {
+    name:'最新',
+    key:'最新',
+    activity:false
+  },
+]

@@ -1,0 +1,150 @@
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 3595695 */
+  src: url('//at.alicdn.com/t/c/font_3595695_nej15a5661i.woff2?t=1667042451081') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3595695_nej15a5661i.woff?t=1667042451081') format('woff'),
+       url('//at.alicdn.com/t/c/font_3595695_nej15a5661i.ttf?t=1667042451081') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-geci:before {
+  content: "\e727";
+}
+.icon-search:before {
+  content: "\e741";
+}
+
+.icon-xiayishou:before {
+  content: "\e63e";
+}
+
+.icon-bofang1:before {
+  content: "\e617";
+}
+
+.icon-zanting:before {
+  content: "\e611";
+}
+
+.icon-shangyishouge:before {
+  content: "\e63c";
+}
+
+.icon-xunhuanbofang:before {
+  content: "\e6a2";
+}
+.icon-danquxunhuan:before {
+  content: "\e66d";
+}
+.icon-suijibofang:before {
+  content: "\e6a0";
+}
+.icon-playlistMusic:before {
+  content: "\ea86";
+}
+.icon-yinliang:before {
+  content: "\eca6";
+}
+.icon-jingyin:before {
+  content: "\e608";
+}
+.icon-gedan:before {
+  content: "\e6c1";
+}
+
+.icon-pinglun:before {
+  content: "\e607";
+}
+
+.icon-zan:before {
+  content: "\e870";
+}
+
+.icon-pinglun1:before {
+  content: "\e60f";
+}
+
+.icon-kafei:before {
+  content: "\e60b";
+}
+
+.icon-ziyuan:before {
+  content: "\e620";
+}
+
+.icon-tiaosepan:before {
+  content: "\e62f";
+}
+
+.icon-like:before {
+  content: "\e62e";
+}
+
+.icon-share:before {
+  content: "\e68b";
+}
+
+.icon-shoucang:before {
+  content: "\e699";
+}
+
+.icon-MV:before {
+  content: "\e62c";
+}
+
+.icon-add:before {
+  content: "\e6da";
+}
+
+.icon-aixin:before {
+  content: "\e6c8";
+}
+
+.icon-erji:before {
+  content: "\e60a";
+}
+
+.icon-bofang:before {
+  content: "\e624";
+}
+
+.icon-lishisousuo:before {
+  content: "\e677";
+}
+
+.icon-remensousuo:before {
+  content: "\e7c7";
+}
+.icon-guanbi:before {
+  content: "\e600";
+}
+.icon-jiantouxia:before {
+  content: "\e62d";
+}
+.icon-gerenzhuye:before {
+  content: "\e645";
+}
+.icon-gerenshezhi:before {
+  content: "\e6a1";
+}
+.icon-qingkong:before {
+  content: "\e781";
+}
+.icon-geren:before {
+  content: "\e610";
+}
+.icon-tuichudenglu:before {
+  content: "\e60c";
+}
+.icon-nvsheng:before {
+  content: "\e876";
+}
+.icon-nansheng:before {
+  content: "\e612";
+}
+
