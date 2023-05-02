@@ -7,13 +7,13 @@ interface LoginCellphone {
 
 /** 手机密码登陆 */
 export const loginCellphone = (params: LoginCellphone) => {
-  return postAjax("/login/cellphone", {
+  return postAjax("/api/login/cellphone", {
     data: { ...params },
   });
 };
 
 export const getUserInfo = () => {
-  return getAjax("/user/account", {
+  return getAjax("/api/user/account", {
     params: {
       timestamp: new Date().getTime(),
     },
@@ -21,5 +21,5 @@ export const getUserInfo = () => {
 };
 
 export const logout = () => {
-  return postAjax("/logout");
+  return postAjax("/api/logout");
 };

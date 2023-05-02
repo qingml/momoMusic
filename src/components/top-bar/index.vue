@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="top-bar__logo" />
-    <div class="top-bar__name">momoMusci</div>
+    <div class="top-bar__name">momoMusic</div>
     <div class="top-bar__wrapper">
       <nav>
         <RouterLink v-for="(item, index) in data" :key="index" :to="item.path">
@@ -50,10 +50,11 @@
 
 <script setup lang="ts">
 import { RouterLink, useRoute, useRouter } from "vue-router";
-import { onMounted, PropType, ref } from "vue";
+import { onMounted, PropType, ref, watch } from "vue";
 import { useLoginStore } from "@/stores/login";
-import SearchOverLay from "@/components/base/search-overlay/index.vue";
+import SearchOverLay from "./components/search-overlay/index.vue";
 import { logout } from "@/api/login";
+import { storeToRefs } from "pinia";
 
 interface IMenuItem {
   path: string;
@@ -67,12 +68,15 @@ defineProps({
   },
 });
 
+const searchOverlayVisible = ref(false);
+const showUserPopover = ref(false);
+
 const loginStore = useLoginStore();
+const {loginStatus} = storeToRefs(loginStore)
+
 const router = useRouter();
 const { path } = useRoute();
 
-const searchOverlayVisible = ref(false);
-const showUserPopover = ref(false);
 
 const handleSearchClick = () => {
   searchOverlayVisible.value = true;
@@ -86,18 +90,21 @@ const handleLogin = () => {
   router.push({
     path: "/login",
     query: {
-      redirect: path,
+      redirect: router.currentRoute.value.fullPath,
     },
   });
 };
 
-const handleSignOut = () => {
-  logout();
+const handleSignOut = async () => {
+  await logout();
   loginStore.setLoginStatus(false);
-
-  // document.cookie =
-  //   "MUSIC_U=''; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 };
+
+watch(loginStatus, (newVal) => {
+  if (newVal) {
+    showUserPopover.value = false;
+  }
+});
 
 const handleJump = () => {
   showUserPopover.value = false;
@@ -113,33 +120,35 @@ header {
   margin: 0 auto;
   top: 0;
   align-items: center;
+  vertical-align: middle;
 }
 
 .top-bar {
   &__logo {
-    width: 54px;
-    height: 54px;
-    border-radius: 30px;
-    background: url(@/assets/logo5.png) no-repeat 0 9999px;
-    background-position: 0;
-    background-size: contain;
-    margin-right: 8px;
-    background-color: var(--color-text-red);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: url(@/assets/img/logo.png) no-repeat 0 9999px;
+    background-position: center;
+    background-size: 90% 90%;
+    margin-right: 4px;
   }
 
   &__name {
     font-family: fantasy;
     font-size: 18px;
     margin-right: 20px;
+    line-height: 68px;
+    position: relative;
+    top: 2px;
   }
 
   &__wrapper {
-    width: calc(100% - 154px);
+    width: calc(100% - 160px);
     display: flex;
     justify-content: space-between;
 
     nav {
-      // flex: 1;
       font-size: 14px;
       text-align: center;
       line-height: 68px;

@@ -7,5 +7,5 @@ export const getSearchSongDetail = (
   offset = 0,
   limit = 30
 ) => {
-  return getAjax("/search", { params: { keywords, type, offset, limit } });
+  return getAjax("/api/search", { params: { keywords, type, offset, limit } });
 };

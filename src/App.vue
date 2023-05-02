@@ -4,23 +4,36 @@
 
     <div class="mian-layout">
       <RouterView />
-      <div class="footer"></div>
+      <div class="footer">
+        <div class="footer-text">
+          @Copyright 2022 By
+          <div class="footer-logo">
+            <div class="icon" />
+            <a
+              target="__blank"
+              href="https://github.com/qingml/NetEase-CloudMusic"
+              class="text"
+            >
+              momoMusic
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <canvas
       id="cas"
       style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5"
-    ></canvas>
+    />
 
     <PlayerBar />
   </div>
 </template>
 
 <script setup>
-//git test
 import { RouterView } from "vue-router";
 import { menus } from "@/constants/menus";
 import TopBar from "@/components/top-bar/index.vue";
-import PlayerBar from "@/components/base/player-bar/index.vue";
+import PlayerBar from "@/components/player-bar/index.vue";
 
 // onMounted(() => {
 //   var canvas = document.getElementById("cas");
@@ -160,11 +173,6 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 @media (min-width: 1024px) {
   header {
     display: flex;
@@ -184,5 +192,39 @@ header {
   margin: 0 auto;
   overflow: hidden;
   margin-bottom: 88px;
+}
+
+.footer {
+  &-text {
+    font-family: monospace;
+    min-width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 20px;
+    justify-content: center;
+  }
+
+  &-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 20px;
+
+    .icon {
+      margin: 0 8px;
+      background-image: url(@/assets/img/logo.png);
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+    }
+    .text {
+      text-decoration: underline;
+    }
+  }
 }
 </style>

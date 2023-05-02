@@ -1,9 +1,9 @@
 import { getAjax, postAjax } from ".";
 
 interface getArtistProps {
-  type:number;
-  area:number;
-  initial:number|string;
+  type: number;
+  area: number;
+  initial: number | string;
   offset: number;
   limit: number;
 }
@@ -15,6 +15,7 @@ export const getArtistList = ({
   offset = 0,
   limit = 50,
 }: getArtistProps) => {
-  console.log("type", type);
-  return getAjax("/artist/list", { params: { type,area,initial, offset,  limit } });
+  return getAjax("/api/artist/list", {
+    params: { type, area, initial, offset, limit },
+  });
 };

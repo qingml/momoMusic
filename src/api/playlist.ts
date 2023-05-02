@@ -1,11 +1,11 @@
 import { getAjax } from ".";
 
 export const getHotTag = () => {
-  return getAjax("/playlist/hot");
+  return getAjax("/api/playlist/hot");
 };
 
 export const getTagCatgoryList = () => {
-  return getAjax("/playlist/catlist");
+  return getAjax("/api/playlist/catlist");
 };
 
 interface getPlaylistProps {
@@ -21,6 +21,5 @@ export const getPlaylist = ({
   order = "hot",
   limit = 40,
 }: getPlaylistProps) => {
-  console.log("cat", cat);
-  return getAjax("/top/playlist", { params: { cat, offset, order, limit } });
+  return getAjax("/api/top/playlist", { params: { cat, offset, order, limit } });
 };
